@@ -1,6 +1,5 @@
 <template>
   <div class="font-nunito">
-    <HeaderNav />
     <div class="px-64 py-14">
       <div v-if="mainArticle">
         <div class="flex justify-between gap-14">
@@ -38,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-4 mt-12">
+      <div class="flex gap-4 mt-12" v-if="remainingArticles">
         <div v-for="article in remainingArticles.slice(0, 3)" :key="article.id">
           <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="h-80 w-full object-cover" />
           <div class="pt-5">
@@ -59,14 +58,24 @@
 </template>
 
 <script setup>
-const { data: fetchedMain } = await useFetch("http://localhost:1337/api/articles?filters[main][$eq]=true&populate=image");
-const mainArticle = fetchedMain._rawValue.data[0];
+const { data: fetchedMain } = await useFetch("http://localhost:1337/api/articles?filters[main][$eq]=true&populate=image", {
+  server: false,
+  transform: (_fetchedMain) => _fetchedMain.data[0],
+});
+const mainArticle = fetchedMain;
 
 const { data: fetchedRemaining } = await useFetch(
-  "http://localhost:1337/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image"
+  "http://localhost:1337/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image",
+  {
+    server: false,
+    transform: (_fetchedRemaining) => _fetchedRemaining.data,
+  }
 );
-const remainingArticles = fetchedRemaining._rawValue.data;
+const remainingArticles = fetchedRemaining;
 
-const { data: fetchedEvents } = await useFetch("http://localhost:1337/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image");
-const eventsArticles = fetchedEvents._rawValue.data;
+const { data: fetchedEvents } = await useFetch("http://localhost:1337/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image", {
+  server: false,
+  transform: (_fetchedEvents) => _fetchedEvents.data,
+});
+const eventsArticles = fetchedEvents;
 </script>
