@@ -3,7 +3,7 @@
   <div class="w-full flex justify-around border-b-2 border-black py-8">
     <div class="w-3/5">
       <h2 class="font-title font-bold text-5xl mt-2">{{ article.title }}</h2>
-      <p class="mt-2">{{ article.content }}</p>
+      <p class="mt-2 truncate">{{ article.text }}</p>
       <p class="mt-2">
         <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
       </p>
@@ -13,7 +13,7 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="h-80 w-96">
+    <div class="h-64 w-96">
       <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="h-full w-full object-cover" />
     </div>
   </div>
