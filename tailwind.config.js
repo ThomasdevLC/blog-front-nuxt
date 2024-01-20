@@ -2,7 +2,12 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+        cormorant: ["Cormorant", "serif"],
+      },
+    },
   },
   plugins: [],
 };

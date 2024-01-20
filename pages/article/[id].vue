@@ -4,7 +4,7 @@
   </NuxtLink>
 
   <div v-if="article" class="px-96 py-12">
-    <h2 class="font-title font-bold text-5xl mt-4">{{ article.title }}</h2>
+    <h2 class="font-title font-bold text-5xl mt-4 font-cormorant">{{ article.title }}</h2>
 
     <div class="my-6 flex gap-4">
       <p>

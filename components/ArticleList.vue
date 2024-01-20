@@ -1,9 +1,9 @@
 <!-- ArticleCard.vue -->
 <template>
-  <div class="w-full flex justify-around border-b-2 border-black py-8">
+  <div class="w-full flex justify-around border-b border-black py-8">
     <div class="w-3/5">
-      <h2 class="font-title font-bold text-5xl mt-2">{{ article.title }}</h2>
-      <p class="mt-2 truncate">{{ article.text }}</p>
+      <h2 class="font-cormorant font-bold text-5xl mt-2">{{ article.title }}</h2>
+      <p class="mt-2 font-nunito truncate">{{ article.text }}</p>
       <p class="mt-2">
         <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
       </p>

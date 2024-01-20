@@ -10,7 +10,7 @@
             <NuxtLink :to="`/article/${mainArticle.id}`">
               <div class="mt-8">
                 <p class="tag">{{ mainArticle.tag }}</p>
-                <h2 class="font-title font-bold text-5xl mt-2">{{ mainArticle.title }}</h2>
+                <h2 class="font-cormorant font-bold text-5xl mt-2">{{ mainArticle.title }}</h2>
                 <p class="mt-2 truncate">
                   {{ mainArticle.text }}
                 </p>
@@ -29,7 +29,7 @@
                   <div class="absolute top-0 h-full bg-black bg-opacity-50 w-full flex flex-col justify-end">
                     <div class="p-5">
                       <p class="tag-second">{{ eventArticle.tag }}</p>
-                      <h2 class="font-title font-bold text-2xl mt-2">{{ eventArticle.title }}</h2>
+                      <h2 class="font-cormorant font-bold text-2xl mt-2">{{ eventArticle.title }}</h2>
                     </div>
                   </div>
                 </div>
@@ -44,7 +44,7 @@
             <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="h-80 w-full object-cover" />
             <div class="pt-5">
               <p class="tag">{{ article.tag }}</p>
-              <h2 class="font-title font-bold text-3xl mt-2">{{ article.title }}</h2>
+              <h2 class="font-cormorant font-bold text-3xl mt-2">{{ article.title }}</h2>
               <p class="mt-2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut laudantium aspernatur voluptatibus. Ad natus laborum placeat eum delectus aliquid
                 expedita debitis, iure illum ea repellat fugiat id facere nam...
