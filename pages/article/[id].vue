@@ -10,7 +10,7 @@
       <p>
         <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
       </p>
-      <p class="tag">{{ article.tag }}</p>
+      <p v-if="article.tag" class="tag">{{ article.tag }}</p>
     </div>
     <div class="my-8">
       <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
@@ -55,4 +55,8 @@ if (article._rawValue.tag === "Evénements") {
 }
 
 console.log(article._rawValue);
+
+definePageMeta({
+  layout: "single",
+});
 </script>
