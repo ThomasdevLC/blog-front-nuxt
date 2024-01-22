@@ -1,8 +1,8 @@
 <template>
-  <header class="px-24 py-4 bg-black text-white">
+  <header class="px-24 py-8 font-nunito font-bold">
     <div class="flex justify-between items-center">
       <p class="text-3xl">Amitiés Taléa</p>
-      <div class="flex gap-10 text-lg">
+      <div class="flex gap-14 text-xl">
         <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>
         <NuxtLink to="/events">Événements</NuxtLink>
@@ -17,6 +17,6 @@
 
 <style scoped>
 .router-link-exact-active {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
 }
 </style>

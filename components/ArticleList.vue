@@ -9,7 +9,7 @@
       </p>
       <div class="align-bottom">
         <NuxtLink :to="`/article/${article.id}`"
-          ><p class="mt-4 text-2xl">Lire l'article <span class="material-symbols-outlined"> north_east </span></p>
+          ><p class="mt-4 text-xl">Lire l'article <span class="material-symbols-outlined"> north_east </span></p>
         </NuxtLink>
       </div>
     </div>
@@ -24,5 +24,5 @@ const props = defineProps(["article"]);
 </script>
 
 <style scoped>
-/* Add any scoped styles if needed */
+/*  */
 </style>

@@ -1,40 +1,24 @@
 <template>
   <div class="font-nunito">
     <div class="sm:px-80 md:px-80 lg:px-80 xl:px-80 py-12">
-      <div v-if="mainArticle">
-        <div class="flex justify-between gap-14">
-          <div class="flex flex-col w-3/5">
-            <div class="h-96">
-              <img :src="'http://localhost:1337' + mainArticle.image.url" :alt="mainArticle.image.alternativeText" class="h-full w-full object-cover" />
-            </div>
-            <NuxtLink :to="`/article/${mainArticle.id}`">
-              <div class="mt-8">
-                <p class="tag">{{ mainArticle.tag }}</p>
-                <h2 class="font-cormorant font-bold text-5xl mt-2">{{ mainArticle.title }}</h2>
-                <p class="mt-2 truncate">
-                  {{ mainArticle.text }}
-                </p>
-                <p class="mt-2">
-                  <span class="font-semibold">{{ mainArticle.author }} </span> | {{ mainArticle.date }}
-                </p>
-              </div>
-            </NuxtLink>
-          </div>
+      <div class="flex justify-between gap-14">
+        <div class="flex flex-col w-3/5" v-if="mainArticle">
+          <MainArticle :mainArticle="mainArticle" />
+        </div>
 
-          <div class="flex flex-col gap-4" v-if="eventsArticles">
-            <div v-for="eventArticle in eventsArticles.slice(0, 2)" :key="eventArticle.id">
-              <NuxtLink :to="`/article/${eventArticle.id}`">
-                <div class="relative text-white h-64">
-                  <img :src="'http://localhost:1337' + eventArticle.image.url" :alt="eventArticle.image.alternativeText" class="h-full w-full object-cover" />
-                  <div class="absolute top-0 h-full bg-black bg-opacity-50 w-full flex flex-col justify-end">
-                    <div class="p-5">
-                      <p class="tag-second">{{ eventArticle.tag }}</p>
-                      <h2 class="font-cormorant font-bold text-2xl mt-2">{{ eventArticle.title }}</h2>
-                    </div>
+        <div class="flex flex-col gap-4" v-if="eventsArticles">
+          <div v-for="eventArticle in eventsArticles.slice(0, 2)" :key="eventArticle.id">
+            <NuxtLink :to="`/article/${eventArticle.id}`">
+              <div class="relative text-white h-64">
+                <img :src="'http://localhost:1337' + eventArticle.image.url" :alt="eventArticle.image.alternativeText" class="h-full w-full object-cover" />
+                <div class="absolute top-0 h-full bg-black bg-opacity-50 w-full flex flex-col justify-end">
+                  <div class="p-5">
+                    <p class="tag-second">{{ eventArticle.tag }}</p>
+                    <h2 class="font-cormorant font-bold text-2xl mt-2">{{ eventArticle.title }}</h2>
                   </div>
                 </div>
-              </NuxtLink>
-            </div>
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
