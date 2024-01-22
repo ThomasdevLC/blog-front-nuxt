@@ -5,7 +5,7 @@
   <NuxtLink :to="`/article/${mainArticle.id}`">
     <div class="mt-8">
       <p class="tag">{{ mainArticle.tag }}</p>
-      <h2 class="font-cormorant font-bold text-5xl mt-2">{{ mainArticle.title }}</h2>
+      <h2 class="font-cormorant text-5xl mt-2">{{ mainArticle.title }}</h2>
       <p class="mt-2 truncate">
         {{ mainArticle.text }}
       </p>

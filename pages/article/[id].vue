@@ -4,32 +4,30 @@
   </NuxtLink>
 
   <div v-if="article" class="px-96 py-12">
-    <h2 class="font-title font-bold text-5xl mt-4 font-cormorant">{{ article.title }}</h2>
+    <div class="px-32">
+      <h2 class="font-title text-6xl mt-4 font-cormorant">{{ article.title }}</h2>
 
-    <div class="my-6 flex gap-4">
-      <p>
-        <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
-      </p>
-      <p v-if="article.tag" class="tag">{{ article.tag }}</p>
+      <div class="my-6 flex gap-4">
+        <p>
+          <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
+        </p>
+        <p v-if="article.tag" class="tag">{{ article.tag }}</p>
+      </div>
     </div>
+
     <div class="my-8">
       <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
     </div>
 
-    <p>{{ article.text }}</p>
-    <div v-for="block of article.blockText" :key="block.type">
-      <template v-if="block.type === 'paragraph'">
-        <p>
-          <span v-for="child in block.children" :key="child.text">
-            <span v-if="child.bold" class="font-bold">{{ child.text }}</span>
-            <span v-else-if="child.italic" class="italic">{{ child.text }}</span>
-            <span v-else>{{ child.text }}</span>
-          </span>
-        </p>
-      </template>
+    <div class="px-32" v-for="block in article.blockText" :key="block.type">
+      <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
+      <span v-else v-for="child in block.children" :key="child.text">
+        <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
+        <span v-else-if="child.italic" class="italic text-gray-900">{{ child.text }}</span>
+        <p v-else class="text-gray-900">{{ child.text }}</p>
+      </span>
     </div>
   </div>
-  <div v-else>chargement ...</div>
 </template>
 
 <script setup>
@@ -54,7 +52,7 @@ if (article._rawValue.tag === "Evénements") {
   link.value = "news";
 }
 
-console.log(article._rawValue);
+console.log(article._rawValue.blockText);
 
 definePageMeta({
   layout: "single",
