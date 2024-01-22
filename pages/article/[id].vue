@@ -1,6 +1,11 @@
 <template>
   <NuxtLink :to="`/${link}`" v-if="article.tag">
-    <p>retour {{ article.tag }}</p>
+    <div class="flex px-24 gap-4">
+      <div class="rotate-180 w-10">
+        <img src="../../assets//images/arrow_right.png" alt="Description de l'image" />
+      </div>
+      <p>{{ article.tag }}</p>
+    </div>
   </NuxtLink>
 
   <div v-if="article" class="px-96 py-12">
