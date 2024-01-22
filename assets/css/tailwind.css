@@ -11,3 +11,6 @@
 .tag-second {
   @apply border px-3 inline-block border-white rounded-xl;
 }
+.back-home {
+  @apply border px-3 inline-block text-white bg-black  rounded-xl;
+}

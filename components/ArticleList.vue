@@ -8,9 +8,7 @@
         <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
       </p>
       <div class="align-bottom">
-        <NuxtLink :to="`/article/${article.id}`"
-          ><p class="mt-4 text-xl">Lire l'article <span class="material-symbols-outlined"> north_east </span></p>
-        </NuxtLink>
+        <NuxtLink :to="`/article/${article.id}`"><p class="mt-4 text-xl">Lire l'article</p> </NuxtLink>
       </div>
     </div>
     <div class="h-64 w-96">

@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="flex gap-10 text-lg">
+  <header class="px-24 py-10">
+    <div class="flex gap-10 text-lg back-home">
       <NuxtLink to="/">Accueil</NuxtLink>
     </div>
   </header>
