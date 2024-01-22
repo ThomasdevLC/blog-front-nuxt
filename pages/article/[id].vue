@@ -15,17 +15,17 @@
       </div>
     </div>
 
-    <div class="my-8">
+    <div class="mt-8 mb-12">
       <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
     </div>
 
     <div class="px-32" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
-      <span v-else v-for="child in block.children" :key="child.text">
+      <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
         <span v-else-if="child.italic" class="italic text-gray-900">{{ child.text }}</span>
         <p v-else class="text-gray-900">{{ child.text }}</p>
-      </span>
+      </div>
     </div>
   </div>
 </template>

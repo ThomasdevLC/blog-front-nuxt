@@ -3,7 +3,7 @@
     <img :src="'http://localhost:1337' + remainingArticle.image.url" :alt="remainingArticle.image.alternativeText" class="h-80 w-full object-cover" />
     <div class="pt-5">
       <p class="tag">{{ remainingArticle.tag }}</p>
-      <h2 class="font-cormorant font-bold text-3xl mt-2">{{ remainingArticle.title }}</h2>
+      <h2 class="font-cormorant text-3xl mt-2">{{ remainingArticle.title }}</h2>
       <p class="mt-2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut laudantium aspernatur voluptatibus. Ad natus laborum placeat eum delectus aliquid expedita
         debitis, iure illum ea repellat fugiat id facere nam...

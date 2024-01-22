@@ -2,7 +2,7 @@
 <template>
   <div class="w-full flex justify-around border-b border-black py-8">
     <div class="w-3/5">
-      <h2 class="font-cormorant font-bold text-5xl mt-2">{{ article.title }}</h2>
+      <h2 class="font-cormorant text-5xl mt-2">{{ article.title }}</h2>
       <p class="mt-2 font-nunito truncate">{{ article.text }}</p>
       <p class="mt-2">
         <span class="font-semibold">{{ article.author }} </span> | {{ article.date }}
