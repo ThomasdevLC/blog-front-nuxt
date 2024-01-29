@@ -1,8 +1,8 @@
 <template>
   <div class="font-nunito">
-    <div class="md:px-40 xl:px-60 py-8">
-      <div class="flex justify-between gap-6">
-        <div class="flex flex-col w-3/5" v-if="mainArticle">
+    <div class="px-8 md:px-12 lg:px-40 xl:px-60 py-8">
+      <div class="flex justify-between gap-6 flex-col md:flex-row">
+        <div class="flex flex-col w-full md:w-3/5" v-if="mainArticle">
           <MainArticle :mainArticle="mainArticle" />
         </div>
 
@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-4 mt-10" v-if="remainingArticles">
+      <div class="flex flex-col md:flex-row gap-4 mt-10" v-if="remainingArticles">
         <div v-for="remainingArticle in remainingArticles.slice(0, 3)" :key="remainingArticle.id">
           <RemainingArticles :remainingArticle="remainingArticle" />
         </div>

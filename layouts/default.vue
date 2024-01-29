@@ -3,10 +3,10 @@
     <div class="flex justify-between items-center">
       <p class="text-3xl">Amitiés Taléa</p>
       <div class="flex gap-14 text-xl">
-        <NuxtLink to="/">Accueil</NuxtLink>
+        <!-- <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>
         <NuxtLink to="/events">Événements</NuxtLink>
-        <NuxtLink to="/news">Actualités</NuxtLink>
+        <NuxtLink to="/news">Actualités</NuxtLink> -->
       </div>
     </div>
   </header>
