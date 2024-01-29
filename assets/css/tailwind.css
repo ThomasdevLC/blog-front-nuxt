@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .tag {
-  @apply border px-3 inline-block border-gray-900 rounded-xl;
+  @apply border px-3 inline-block border-gray-900 rounded-xl w-fit;
 }
 .tag-second {
   @apply border px-3 inline-block border-white rounded-xl;
