@@ -1,5 +1,5 @@
 <template>
-  <header class="px-24 md:px-14 py-8 font-nunito font-bold">
+  <header class="px-12 md:px-14 py-8 font-nunito font-bold">
     <div class="flex justify-between items-center">
       <p class="text-2xl lg:text-3xl">Amitiés Taléa</p>
 
@@ -11,13 +11,13 @@
         <NuxtLink to="/events">Événements</NuxtLink>
         <NuxtLink to="/news">Actualités</NuxtLink>
       </div>
-    </div>
 
-    <div v-if="showMenu" class="md:hidden">
-      <NuxtLink to="/">Accueil</NuxtLink>
-      <NuxtLink to="/infos">Infos</NuxtLink>
-      <NuxtLink to="/events">Événements</NuxtLink>
-      <NuxtLink to="/news">Actualités</NuxtLink>
+      <div v-if="showMenu" class="md:hidden flex flex-col bg-white bg-opacity-80 absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20">
+        <NuxtLink to="/">Accueil</NuxtLink>
+        <NuxtLink to="/infos">Infos</NuxtLink>
+        <NuxtLink to="/events">Événements</NuxtLink>
+        <NuxtLink to="/news">Actualités</NuxtLink>
+      </div>
     </div>
   </header>
   <div>
