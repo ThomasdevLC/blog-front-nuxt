@@ -8,7 +8,7 @@
     </div>
   </NuxtLink>
 
-  <div v-if="article" class="px-96 py-12">
+  <div v-if="article" class="px-96 md:px-40 py-12">
     <div class="px-32">
       <h2 class="font-title text-6xl mt-4 font-cormorant">{{ article.title }}</h2>
 

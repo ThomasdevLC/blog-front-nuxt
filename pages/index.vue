@@ -1,6 +1,6 @@
 <template>
   <div class="font-nunito">
-    <div class="sm:px-80 md:px-80 lg:px-80 xl:px-80 py-12">
+    <div class="md:px-40 xl:px-60 py-8">
       <div class="flex justify-between gap-6">
         <div class="flex flex-col w-3/5" v-if="mainArticle">
           <MainArticle :mainArticle="mainArticle" />
