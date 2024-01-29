@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="`/article/${remainingArticle.id}`">
-    <img :src="'http://localhost:1337' + remainingArticle.image.url" :alt="remainingArticle.image.alternativeText" class="h-80 w-full object-cover" />
+    <img :src="'http://localhost:1337' + remainingArticle.image.url" :alt="remainingArticle.image.alternativeText" class="h-80 md:h-60 w-full object-cover" />
     <div class="pt-5">
       <p class="tag">{{ remainingArticle.tag }}</p>
       <h2 class="font-cormorant text-3xl mt-2">{{ remainingArticle.title }}</h2>

@@ -1,19 +1,44 @@
 <template>
-  <header class="px-24 py-8 font-nunito font-bold">
+  <header class="px-24 md:px-14 py-8 font-nunito font-bold">
     <div class="flex justify-between items-center">
-      <p class="text-3xl">Amitiés Taléa</p>
-      <div class="flex gap-14 text-xl">
-        <!-- <NuxtLink to="/">Accueil</NuxtLink>
+      <p class="text-2xl lg:text-3xl">Amitiés Taléa</p>
+
+      <button @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
+
+      <div v-if="!showMenu" class="hidden md:flex gap-14 md:gap-7 text-lg">
+        <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>
         <NuxtLink to="/events">Événements</NuxtLink>
-        <NuxtLink to="/news">Actualités</NuxtLink> -->
+        <NuxtLink to="/news">Actualités</NuxtLink>
       </div>
+    </div>
+
+    <div v-if="showMenu" class="md:hidden">
+      <NuxtLink to="/">Accueil</NuxtLink>
+      <NuxtLink to="/infos">Infos</NuxtLink>
+      <NuxtLink to="/events">Événements</NuxtLink>
+      <NuxtLink to="/news">Actualités</NuxtLink>
     </div>
   </header>
   <div>
     <slot />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .router-link-exact-active {

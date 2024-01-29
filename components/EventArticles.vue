@@ -5,7 +5,7 @@
       <div class="absolute top-0 h-full bg-black bg-opacity-50 w-full flex flex-col justify-end">
         <div class="p-5">
           <p class="tag-second">{{ eventArticle.tag }}</p>
-          <h2 class="font-cormorant font-bold text-2xl mt-2">{{ eventArticle.title }}</h2>
+          <h2 class="font-cormorant font-bold text-2xl md:text-xl mt-2">{{ eventArticle.title }}</h2>
         </div>
       </div>
     </div>
