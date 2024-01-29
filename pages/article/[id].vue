@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="`/${link}`" v-if="article.tag">
-    <div class="flex px-24 gap-4">
+    <div class="flex px-10 md:px-24 gap-4">
       <div class="rotate-180 w-10">
         <img src="../../assets//images/arrow_right.png" alt="Description de l'image" />
       </div>
@@ -8,7 +8,7 @@
     </div>
   </NuxtLink>
 
-  <div v-if="article" class="md:px-14 py-12">
+  <div v-if="article" class="md:px-14 py-8 md:py-12">
     <div class="px-10 md:px-14 lg:px-44 xl:px-96">
       <h2 class="font-title text-4xl md:text-6xl mt-4 font-cormorant">{{ article.title }}</h2>
 
