@@ -10,13 +10,14 @@
         {{ mainArticle.text }}
       </p>
       <p class="mt-2">
-        <span class="font-semibold">{{ mainArticle.author }} </span> | {{ mainArticle.date }}
+        <span class="font-semibold">{{ mainArticle.author }} </span> | {{ formatDate(mainArticle.date) }}
       </p>
     </div>
   </NuxtLink>
 </template>
 
 <script setup>
+import formatDate from "../utils/dateUtils";
 const props = defineProps(["mainArticle"]);
 </script>
 

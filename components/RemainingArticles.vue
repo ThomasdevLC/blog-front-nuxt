@@ -9,13 +9,15 @@
         debitis, iure illum ea repellat fugiat id facere nam...
       </p>
       <p class="mt-2">
-        <span class="font-semibold">{{ remainingArticle.author }} </span> | {{ remainingArticle.date }}
+        <span class="font-semibold">{{ remainingArticle.author }} </span> | {{ formatDate(remainingArticle.date) }}
       </p>
     </div>
   </NuxtLink>
 </template>
 
 <script setup>
+import formatDate from "../utils/dateUtils";
+
 const props = defineProps(["remainingArticle"]);
 </script>
 
