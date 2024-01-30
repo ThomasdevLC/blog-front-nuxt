@@ -5,7 +5,7 @@
 
       <button @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
 
-      <div v-if="!showMenu" class="hidden md:flex gap-14 md:gap-7 text-lg">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-7 lg:gap-14 text-lg">
         <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>
         <NuxtLink to="/events">Événements</NuxtLink>

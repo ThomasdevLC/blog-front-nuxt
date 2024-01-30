@@ -9,7 +9,7 @@
   </NuxtLink>
 
   <div v-if="article" class="md:px-14 py-8 md:py-12">
-    <div class="px-10 md:px-14 lg:px-44 xl:px-96">
+    <div class="px-10 md:px-14 lg:px-72 xl:px-96">
       <h2 class="font-title text-4xl md:text-6xl mt-4 font-cormorant">{{ article.title }}</h2>
 
       <div class="my-6 flex flex-col md:flex-row gap-4">
@@ -20,11 +20,11 @@
       </div>
     </div>
 
-    <div class="px-10 xl:px-64 mt-8 mb-12">
+    <div class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
       <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
     </div>
 
-    <div class="px-10 lg:px-44 xl:px-96" v-for="block in article.blockText" :key="block.type">
+    <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
       <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
