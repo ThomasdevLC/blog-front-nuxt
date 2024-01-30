@@ -5,9 +5,9 @@
       <p class="tag">{{ remainingArticle.tag }}</p>
       <h2 class="font-cormorant text-3xl mt-2">{{ remainingArticle.title }}</h2>
       <p class="mt-2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut laudantium aspernatur voluptatibus. Ad natus laborum placeat eum delectus aliquid expedita
-        debitis, iure illum ea repellat fugiat id facere nam...
+        {{ remainingArticle.blockText[0].children[0].text }}
       </p>
+
       <p class="mt-2">
         <span class="font-semibold">{{ remainingArticle.author }} </span> | {{ formatDate(remainingArticle.date) }}
       </p>

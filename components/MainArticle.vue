@@ -6,9 +6,9 @@
     <div class="mt-4 md:mt-8">
       <p class="tag">{{ mainArticle.tag }}</p>
       <h2 class="font-cormorant text-3xl lg:text-5xl mt-2">{{ mainArticle.title }}</h2>
-      <p class="mt-2 truncate">
-        {{ mainArticle.text }}
-      </p>
+      <div v-for="block in mainArticle.blockText" :key="block.type">
+        <p v-if="block.type === 'heading'" class="font-nunito mt-2 truncate">{{ block.children[0].text }}</p>
+      </div>
       <p class="mt-2">
         <span class="font-semibold">{{ mainArticle.author }} </span> | {{ formatDate(mainArticle.date) }}
       </p>

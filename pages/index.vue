@@ -1,6 +1,6 @@
 <template>
   <div class="font-nunito">
-    <div class="px-8 md:px-12 lg:px-40 xl:px-96 py-8">
+    <div class="px-8 md:px-12 lg:px-40 xl:px-96 py-4">
       <div class="flex justify-between gap-6 flex-col md:flex-row">
         <div class="flex flex-col w-full md:w-3/5" v-if="mainArticle">
           <MainArticle :mainArticle="mainArticle" />
@@ -12,8 +12,8 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row gap-4 mt-10" v-if="remainingArticles">
-        <div v-for="remainingArticle in remainingArticles.slice(0, 3)" :key="remainingArticle.id">
+      <div class="flex flex-col md:flex-row mt-10 space-x-4" v-if="remainingArticles">
+        <div class="w-full md:w-1/3" v-for="remainingArticle in remainingArticles.slice(0, 3)" :key="remainingArticle.id">
           <RemainingArticles :remainingArticle="remainingArticle" />
         </div>
       </div>
@@ -42,4 +42,5 @@ const { data: fetchedRemaining } = await useFetch(
   }
 );
 const remainingArticles = fetchedRemaining;
+console.log(remainingArticles);
 </script>
