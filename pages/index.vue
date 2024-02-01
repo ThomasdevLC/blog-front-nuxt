@@ -42,5 +42,4 @@ const { data: fetchedRemaining } = await useFetch(
   }
 );
 const remainingArticles = fetchedRemaining;
-console.log(remainingArticles);
 </script>

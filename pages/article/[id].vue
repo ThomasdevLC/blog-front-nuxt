@@ -58,8 +58,6 @@ if (article._rawValue.tag === "Evénements") {
   link.value = "news";
 }
 
-console.log(article._rawValue.blockText);
-
 definePageMeta({
   layout: "single",
 });
