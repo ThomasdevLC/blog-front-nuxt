@@ -3,7 +3,8 @@
     <div class="flex justify-between items-center">
       <p class="text-3xl lg:text-3xl">Amitiés Taléa</p>
 
-      <button @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
+      <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
+      <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
 
       <div v-if="!showMenu" class="hidden md:flex md:gap-7 lg:gap-12 text-xl">
         <NuxtLink to="/">Accueil</NuxtLink>

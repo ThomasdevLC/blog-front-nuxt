@@ -26,6 +26,9 @@
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
+      <div v-else-if="block.type === 'image'">
+        <img :src="block.image.url" :alt="block.image.alternativeText" class="py-8 px-20 w-full object-cover" />
+      </div>
       <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
         <span v-else-if="child.italic" class="italic text-gray-900">{{ child.text }}</span>
@@ -47,6 +50,8 @@ const { data: fetchedSingleArticle } = await useFetch(uri, {
   transform: (_fetchedSingleArticle) => _fetchedSingleArticle.data,
 });
 const article = fetchedSingleArticle;
+
+console.log(article);
 
 const link = ref("");
 
