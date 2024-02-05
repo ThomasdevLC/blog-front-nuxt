@@ -12,7 +12,7 @@
   @apply border px-3 inline-block border-white rounded-xl;
 }
 .back-home {
-  @apply border px-3 inline-block text-white bg-black  rounded-xl;
+  @apply border px-3 inline-block text-white bg-primary  rounded-xl;
 }
 .signature {
   @apply font-bold text-primary;

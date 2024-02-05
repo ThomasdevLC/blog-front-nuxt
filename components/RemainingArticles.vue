@@ -9,7 +9,7 @@
       </p>
 
       <p class="mt-2">
-        <span class="font-semibold">{{ remainingArticle.author }} </span> | {{ formatDate(remainingArticle.date) }}
+        <span class="signature">{{ remainingArticle.author }} </span> | {{ formatDate(remainingArticle.date) }}
       </p>
     </div>
   </NuxtLink>

@@ -9,8 +9,4 @@
   </div>
 </template>
 
-<style scoped>
-.router-link-exact-active {
-  border-bottom: 1px solid white;
-}
-</style>
+<style scoped></style>
