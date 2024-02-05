@@ -14,7 +14,7 @@
 
       <div class="my-6 flex flex-col md:flex-row gap-4">
         <p>
-          <span class="font-semibold">{{ article.author }} </span> | {{ formatDate(article.date) }}
+          <span class="signature">{{ article.author }} </span> | {{ formatDate(article.date) }}
         </p>
         <p v-if="article.tag" class="tag">{{ article.tag }}</p>
       </div>

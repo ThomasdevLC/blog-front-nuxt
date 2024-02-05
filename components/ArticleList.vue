@@ -6,13 +6,13 @@
         <p v-if="block.type === 'heading'" class="font-nunito truncate">{{ block.children[0].text }}</p>
       </div>
       <p class="mt-2">
-        <span class="font-semibold">{{ article.author }} </span> | {{ formatDate(article.date) }}
+        <span class="signature">{{ article.author }} </span> | {{ formatDate(article.date) }}
       </p>
       <div class="align-bottom">
         <NuxtLink :to="`/article/${article.id}`">
-          <div class="flex space-x-3">
-            <p class="mt-4 mb-4 text-xl">Lire l'article</p>
-            <div class="w-6 flex justify-center items-center">
+          <div class="flex space-x-3 group">
+            <p class="mt-4 mb-4 text-xl link">Lire l'article</p>
+            <div class="w-6 flex justify-center items-center transition-transform transform translate-x-0 group-hover:translate-x-1">
               <img src="../assets/images/arrow_right.png" alt="Description de l'image" />
             </div>
           </div>

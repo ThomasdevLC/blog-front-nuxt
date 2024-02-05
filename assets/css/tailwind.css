@@ -17,3 +17,6 @@
 .signature {
   @apply font-bold text-primary;
 }
+.link {
+  @apply text-primary;
+}
