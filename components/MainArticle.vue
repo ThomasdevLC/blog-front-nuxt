@@ -10,7 +10,7 @@
         <p v-if="block.type === 'heading'" class="font-nunito mt-2 truncate">{{ block.children[0].text }}</p>
       </div>
       <p class="mt-2">
-        <span class="font-semibold">{{ mainArticle.author }} </span> | {{ formatDate(mainArticle.date) }}
+        <span class="signature">{{ mainArticle.author }} </span> | {{ formatDate(mainArticle.date) }}
       </p>
     </div>
   </NuxtLink>

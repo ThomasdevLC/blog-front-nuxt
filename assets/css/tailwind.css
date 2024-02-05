@@ -14,3 +14,6 @@
 .back-home {
   @apply border px-3 inline-block text-white bg-black  rounded-xl;
 }
+.signature {
+  @apply font-bold text-primary;
+}

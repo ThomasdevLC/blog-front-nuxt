@@ -1,5 +1,5 @@
 <template>
-  <div class="px-10 md:px-30 lg:px-48 xl:px-96 md:py-10">
+  <div class="px-10 md:px-30 lg:px-48 xl:px-96 md:py-4">
     <div v-for="article in articles" :key="article.id">
       <ArticleList :article="article" />
     </div>

@@ -14,6 +14,9 @@ export default {
         xl: "1600px", // Large screens,
         xxl: "1920px", // Extra large screens,
       },
+      colors: {
+        primary: "#004863",
+      },
     },
   },
   plugins: [],
