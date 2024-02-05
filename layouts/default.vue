@@ -1,15 +1,18 @@
 <template>
-  <header class="px-12 md:px-14 py-8 font-nunito font-bold">
+  <header class="px-12 md:px-14 py-6 bg-white bg-opacity-90 sticky top-0 z-50">
     <div class="flex justify-between items-center">
-      <p class="text-3xl lg:text-3xl">Amitiés Taléa</p>
+      <p class="text-3xl lg:text-3xl font-nunito font-bold">Amitiés Taléa</p>
 
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-7 lg:gap-12 text-xl">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-7 lg:gap-4 text-2xl font-cormorant font-light text-gray-900">
         <NuxtLink to="/">Accueil</NuxtLink>
+        <span>|</span>
         <NuxtLink to="/infos">Infos</NuxtLink>
+        <span>|</span>
         <NuxtLink to="/events">Événements</NuxtLink>
+        <span>|</span>
         <NuxtLink to="/news">Actualités</NuxtLink>
       </div>
 
@@ -43,6 +46,7 @@ export default {
 
 <style scoped>
 .router-link-exact-active {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #004863;
+  color: hsl(196, 100%, 10%);
 }
 </style>
