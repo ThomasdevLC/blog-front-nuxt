@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
         cormorant: ["Cormorant", "serif"],
+        PPRader: ["PPRader", "sans-serif"],
       },
       screens: {
         sm: "640px", // Small screens,

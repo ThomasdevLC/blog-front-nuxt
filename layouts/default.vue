@@ -1,7 +1,10 @@
 <template>
-  <header class="px-12 md:px-14 py-6 bg-white bg-opacity-90 sticky top-0 z-50">
+  <header class="px-12 md:px-14 py-3 bg-white bg-opacity-90 sticky top-0 z-50">
     <div class="flex justify-between items-center">
-      <p class="text-3xl lg:text-3xl font-nunito font-bold">Amitiés Taléa</p>
+      <div class="flex">
+        <p class="blog text font-extrabold font-nunito text-primary flex items-center justify-center">BLOG</p>
+        <p class="text-3xl lg:text-5xl font-PPRader text-primary">Amitiés Taléa</p>
+      </div>
 
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
@@ -49,4 +52,9 @@ export default {
   border-bottom: 2px solid #004863;
   color: hsl(196, 100%, 10%);
 }
+.blog {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
 </style>
+wheather
