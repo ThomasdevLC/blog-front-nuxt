@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .router-link-exact-active {
   border-bottom: 2px solid #004863;
-  color: hsl(196, 100%, 10%);
+  color: hsl(196, 100%, 12%);
 }
 .blog {
   writing-mode: vertical-lr;

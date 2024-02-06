@@ -1,7 +1,11 @@
 <template>
   <NuxtLink :to="`/article/${eventArticle.id}`">
-    <div class="relative text-white h-64">
-      <img :src="'http://localhost:1337' + eventArticle.image.url" :alt="eventArticle.image.alternativeText" class="h-full w-full object-cover" />
+    <div class="relative text-white h-64 group">
+      <img
+        :src="'http://localhost:1337' + eventArticle.image.url"
+        :alt="eventArticle.image.alternativeText"
+        class="h-full w-full object-cover group-hover:brightness-125 transition duration-300 ease-in-out"
+      />
       <div class="absolute top-0 h-full bg-black bg-opacity-50 w-full flex flex-col justify-end">
         <div class="p-5">
           <p class="tag-second">{{ eventArticle.tag }}</p>
