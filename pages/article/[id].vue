@@ -4,7 +4,7 @@
       <div class="rotate-180 w-10">
         <img src="../../assets//images/arrow_right.png" alt="Description de l'image" />
       </div>
-      <p class="text-lg">{{ article.tag }}</p>
+      <p class="text-2xl font-nunito font-semibold text-gray-900">{{ article.tag }}</p>
     </div>
   </NuxtLink>
 
