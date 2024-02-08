@@ -51,8 +51,6 @@ const { data: fetchedSingleArticle } = await useFetch(uri, {
 });
 const article = fetchedSingleArticle;
 
-console.log(article);
-
 const link = ref("");
 
 if (article._rawValue.tag === "Evénements") {

@@ -8,7 +8,7 @@
       />
       <div class="pt-5">
         <p class="tag">{{ remainingArticle.tag }}</p>
-        <h2 class="font-cormorant text-3xl mt-2">{{ remainingArticle.title }}</h2>
+        <h2 class="font-cormorant font-semibold text-3xl mt-2">{{ remainingArticle.title }}</h2>
         <p class="mt-2">
           {{ remainingArticle.blockText[0].children[0].text }}
         </p>
