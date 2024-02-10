@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-const { data: fetchedData } = await useFetch("http://localhost:1337/api/articles?filters[tag][$eq]=Actualités&sort[0]=date:desc&populate=image", {
+const { data: fetchedData } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[tag][$eq]=Actualités&sort[0]=date:desc&populate=image", {
   server: false,
   transform: (_fetchedData) => _fetchedData.data,
 });

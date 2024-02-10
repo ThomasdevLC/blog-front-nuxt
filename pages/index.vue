@@ -22,20 +22,20 @@
 </template>
 
 <script setup>
-const { data: fetchedMain } = await useFetch("http://localhost:1337/api/articles?filters[main][$eq]=true&populate=image", {
+const { data: fetchedMain } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[main][$eq]=true&populate=image", {
   server: false,
   transform: (_fetchedMain) => _fetchedMain.data[0],
 });
 const mainArticle = fetchedMain;
 
-const { data: fetchedEvents } = await useFetch("http://localhost:1337/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image", {
+const { data: fetchedEvents } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image", {
   server: false,
   transform: (_fetchedEvents) => _fetchedEvents.data,
 });
 const eventsArticles = fetchedEvents;
 
 const { data: fetchedRemaining } = await useFetch(
-  "http://localhost:1337/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image",
+  import.meta.env.API_URL + "/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image",
   {
     server: false,
     transform: (_fetchedRemaining) => _fetchedRemaining.data,

@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="h-64 md:w-96">
-      <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="h-full w-full object-cover" />
+      <img :src="imageUrl" :alt="article.image.alternativeText" class="h-full w-full object-cover" />
     </div>
   </div>
 </template>
@@ -28,6 +28,7 @@
 <script setup>
 import formatDate from "../utils/dateUtils";
 const props = defineProps(["article"]);
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.article.image.url);
 </script>
 
 <style scoped>

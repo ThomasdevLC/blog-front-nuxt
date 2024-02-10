@@ -21,7 +21,7 @@
     </div>
 
     <div class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
-      <img :src="'http://localhost:1337' + article.image.url" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
+      <img :src="imageUrl" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
     </div>
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
@@ -50,6 +50,7 @@ const { data: fetchedSingleArticle } = await useFetch(uri, {
   transform: (_fetchedSingleArticle) => _fetchedSingleArticle.data,
 });
 const article = fetchedSingleArticle;
+  const imageUrl = computed(() => import.meta.env.VITE_API_URL + article.image.url);
 
 const link = ref("");
 

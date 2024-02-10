@@ -2,7 +2,7 @@
   <NuxtLink :to="`/article/${eventArticle.id}`">
     <div class="relative text-white h-64 group">
       <img
-        :src="'http://localhost:1337' + eventArticle.image.url"
+        :src="imageUrl"
         :alt="eventArticle.image.alternativeText"
         class="h-full w-full object-cover group-hover:brightness-125 transition duration-300 ease-in-out"
       />
@@ -18,6 +18,7 @@
 
 <script setup>
 const props = defineProps(["eventArticle"]);
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.eventArticle.image.url);
 </script>
 
 <style lang="scss" scoped></style>

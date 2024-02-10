@@ -2,7 +2,7 @@
   <NuxtLink :to="`/article/${remainingArticle.id}`">
     <div class="group">
       <img
-        :src="'http://localhost:1337' + remainingArticle.image.url"
+        :src="imageUrl"
         :alt="remainingArticle.image.alternativeText"
         class="h-80 md:h-60 w-full object-cover group-hover:brightness-75 transition duration-300 ease-in-out"
       />
@@ -25,6 +25,8 @@
 import formatDate from "../utils/dateUtils";
 
 const props = defineProps(["remainingArticle"]);
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.remainingArticle.image.url);
+
 </script>
 
 <style lang="scss" scoped></style>
