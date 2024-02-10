@@ -22,24 +22,42 @@
 </template>
 
 <script setup>
-const { data: fetchedMain } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[main][$eq]=true&populate=image", {
-  server: false,
-  transform: (_fetchedMain) => _fetchedMain.data[0],
-});
-const mainArticle = fetchedMain;
+const mainArticle = ref(null);
+const eventsArticles = ref([]);
+const remainingArticles = ref([]);
 
-const { data: fetchedEvents } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image", {
-  server: false,
-  transform: (_fetchedEvents) => _fetchedEvents.data,
-});
-const eventsArticles = fetchedEvents;
-
-const { data: fetchedRemaining } = await useFetch(
-  import.meta.env.API_URL + "/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image",
-  {
-    server: false,
-    transform: (_fetchedRemaining) => _fetchedRemaining.data,
+async function fetchMain() {
+  try {
+    const response = await $fetch(import.meta.env.VITE_API_URL + "/api/articles?filters[main][$eq]=true&populate=image");
+    mainArticle.value = response.data[0];
+  } catch (error) {
+    console.error("Une erreur est survenue : ", error);
   }
-);
-const remainingArticles = fetchedRemaining;
+}
+
+fetchMain();
+
+async function fetchEvents() {
+  try {
+    const response = await $fetch(import.meta.env.VITE_API_URL + "/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image");
+    eventsArticles.value = response.data;
+  } catch (error) {
+    console.error("Une erreur est survenue : ", error);
+  }
+}
+
+fetchEvents();
+
+async function fetchRemaining() {
+  try {
+    const response = await $fetch(
+      import.meta.env.VITE_API_URL + "/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image"
+    );
+    remainingArticles.value = response.data;
+  } catch (error) {
+    console.error("Une erreur est survenue : ", error);
+  }
+}
+
+fetchRemaining();
 </script>
