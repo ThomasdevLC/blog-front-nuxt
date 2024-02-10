@@ -9,7 +9,7 @@
     </div>
     <div class="mt-4 md:mt-8">
       <p class="tag">{{ mainArticle.tag }}</p>
-      <h2 class="font-cormorant font-semibold text-3xl lg:text-5xl mt-2">{{ mainArticle.title }}</h2>
+      <h2 class="font-cormorant font-semibold text-gray-900 text-3xl lg:text-5xl mt-2">{{ mainArticle.title }}</h2>
       <div v-for="block in mainArticle.blockText" :key="block.type">
         <p v-if="block.type === 'heading'" class="font-nunito mt-2 truncate">{{ block.children[0].text }}</p>
       </div>

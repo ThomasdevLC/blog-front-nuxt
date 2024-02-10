@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col md:flex-row md:gap-8 justify-around border-b border-black py-8">
     <div class="w-full md:w-3/5">
-      <h2 class="font-cormorant font-semibold text-3xl lg:text-5xl md:mt-2 mb-4">{{ article.title }}</h2>
+      <h2 class="font-cormorant font-semibold text-gray-900 text-3xl lg:text-5xl md:mt-2 mb-4">{{ article.title }}</h2>
       <div v-for="block in article.blockText" :key="block.type">
         <p v-if="block.type === 'heading'" class="font-nunito truncate">{{ block.children[0].text }}</p>
       </div>

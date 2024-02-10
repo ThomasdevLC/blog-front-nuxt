@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/${link}`" v-if="article.tag">
     <div class="flex px-10 md:px-24 gap-4">
-      <div class="rotate-180 w-10">
+      <div class="rotate-180 w-10 flex items-center">
         <img src="../../assets//images/arrow_right.png" alt="flèche retour" />
       </div>
       <p class="text-2xl font-nunito font-semibold text-gray-900">{{ article.tag }}</p>
