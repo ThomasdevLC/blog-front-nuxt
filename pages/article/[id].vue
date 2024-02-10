@@ -20,9 +20,9 @@
       </div>
     </div>
 
-    <div class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
+    <!-- <div v-if="article.url" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
       <img :src="imageUrl" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
-    </div>
+    </div> -->
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
@@ -41,16 +41,22 @@
 <script setup>
 import { ref } from "vue";
 import formatDate from "../../utils/dateUtils";
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + article.image.url);
 
 const { id } = useRoute().params;
-const uri = `http://localhost:1337/api/articles/${id}?&populate=image`;
 
-const { data: fetchedSingleArticle } = await useFetch(uri, {
-  server: false,
-  transform: (_fetchedSingleArticle) => _fetchedSingleArticle.data,
-});
-const article = fetchedSingleArticle;
-  const imageUrl = computed(() => import.meta.env.VITE_API_URL + article.image.url);
+const article = ref([]);
+
+async function fetchSingleArticle() {
+  try {
+    const response = await $fetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`);
+    article.value = response.data;
+  } catch (error) {
+    console.error("Une erreur est survenue : ", error);
+  }
+}
+
+fetchSingleArticle();
 
 const link = ref("");
 
