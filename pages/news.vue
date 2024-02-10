@@ -7,9 +7,16 @@
 </template>
 
 <script setup>
-const { data: fetchedData } = await useFetch(import.meta.env.API_URL + "/api/articles?filters[tag][$eq]=Actualités&sort[0]=date:desc&populate=image", {
-  server: false,
-  transform: (_fetchedData) => _fetchedData.data,
-});
-const articles = fetchedData;
+const articles = ref([]);
+
+async function fetchedData() {
+  try {
+    const response = await $fetch(import.meta.env.VITE_API_URL + "/api/articles?filters[tag][$eq]=Actualités&sort[0]=date:desc&populate=image");
+    articles.value = response.data;
+  } catch (error) {
+    console.error("Une erreur est survenue : ", error);
+  }
+}
+
+fetchedData();
 </script>
