@@ -4,10 +4,8 @@
 
     <div v-if="remainingArticle.image">
       <pre v-if="remainingArticle.image">{{ remainingArticle.image.url }}</pre>
-      <img :src="'http://back.amities-talea.fr:1337' + remainingArticle.image.url">
+      <img :src="'http://back.amities-talea.fr' + remainingArticle.image.url" alt="truc">
     </div>
-
-
   </div>
 
 </template>
