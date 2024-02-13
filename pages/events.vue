@@ -7,19 +7,6 @@
 </template>
 
 <script setup>
-// const articles = ref([]);
-
-// async function fetchedData() {
-//   try {
-//     const response = await $fetch(import.meta.env.VITE_API_URL + "/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image");
-//     articles.value = response.data;
-//   } catch (error) {
-//     console.error("Une erreur est survenue : ", error);
-//   }
-// }
-
-// fetchedData();
-
 const { data: fetchedArticle } = await useFetch(import.meta.env.VITE_API_URL + `/api/articles?filters[tag][$eq]=Evénements&sort[0]=date:desc&populate=image`, {
   transform: (_fetchedArticle) => _fetchedArticle.data,
 });
