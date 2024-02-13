@@ -1,6 +1,6 @@
 <template>
   <div class="font-nunito">
-    <div class="px-8 md:px-12 lg:px-40 xl:px-96 py-4">
+    <div class="px-8 md:px-12 lg:px-40 xl:px-96 py-8">
       <div class="flex justify-between gap-6 flex-col md:flex-row">
         <div class="flex flex-col w-full md:w-3/5" v-if="mainArticle">
           <MainArticle :mainArticle="mainArticle" />
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <footer class="mt-6 py-8 flex-col bg-primary bg-opacity-10 items-center justify-center text-center">
+  <footer class="mt-8 py-6 flex-col items-center justify-center text-center">
     <p class="text-2xl lg:text-3xl font-PPRader text-primary">Amitiés Taléa</p>
     <div class="flex items-center justify-center gap-4">
       <div class="w-8">

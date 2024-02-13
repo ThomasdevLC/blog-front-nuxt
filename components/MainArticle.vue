@@ -8,13 +8,20 @@
       />
     </div>
     <div class="mt-4 md:mt-8">
-      <p class="tag">{{ mainArticle.tag }}</p>
-      <h2 class="font-cormorant font-semibold text-gray-900 text-3xl lg:text-5xl mt-2">{{ mainArticle.title }}</h2>
+      <p class="tag group-hover:text-primary border px-3 inline-block border-primary rounded-xl transition duration-300 ease-in-out border-3px">
+        {{ mainArticle.tag }}
+      </p>
+      <h2 class="font-cormorant font-semibold text-gray-900 text-3xl lg:text-5xl mt-2 group-hover:text-primary transition duration-300 ease-in-out">
+        {{ mainArticle.title }}
+      </h2>
       <div v-for="block in mainArticle.blockText" :key="block.type">
-        <p v-if="block.type === 'heading'" class="font-nunito mt-2 truncate">{{ block.children[0].text }}</p>
+        <p v-if="block.type === 'heading'" class="font-nunito mt-2 truncate group-hover:text-primary transition duration-300 ease-in-out">
+          {{ block.children[0].text }}
+        </p>
       </div>
       <p class="mt-2">
-        <span class="signature">{{ mainArticle.author }} </span> | {{ formatDate(mainArticle.date) }}
+        <span class="signature group-hover:text-primary transition duration-300 ease-in-out">{{ mainArticle.author }} </span> |
+        <span class="group-hover:text-primary transition duration-300 ease-in-out"> {{ formatDate(mainArticle.date) }}</span>
       </p>
     </div>
   </NuxtLink>

@@ -14,6 +14,9 @@
 .tag-second {
   @apply border px-3 inline-block border-white rounded-xl;
 }
+.tag-hover {
+  @apply border px-3 inline-block border-primary rounded-xl;
+}
 .back-home {
   @apply border px-3 inline-block text-white bg-primary  rounded-xl;
 }
