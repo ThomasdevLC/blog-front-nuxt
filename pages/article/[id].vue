@@ -54,19 +54,6 @@ const getImageUrl = (path) => {
 
 const { id } = useRoute().params;
 
-// const article = ref([]);
-
-// async function fetchSingleArticle() {
-//   try {
-//     const response = await $fetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`);
-//     article.value = response.data;
-//   } catch (error) {
-//     console.error("Une erreur est survenue : ", error);
-//   }
-// }
-
-// fetchSingleArticle();
-
 const { data: fetchedArticle } = await useFetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`, {
   transform: (_fetchedArticle) => _fetchedArticle.data,
 });
