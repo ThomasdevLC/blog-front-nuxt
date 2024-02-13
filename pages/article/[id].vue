@@ -21,7 +21,7 @@
     </div>
 
     <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
-      <img :src="getImageUrl(article.image.formats.large.url)" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
+      <img :src="getImageUrl(article.image.formats.large.url)" :alt="article.image.alternativeText" class="article-image object-cover" />
     </div>
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
@@ -73,3 +73,10 @@ definePageMeta({
   layout: "single",
 });
 </script>
+
+<style>
+.article-image {
+  height: 500px;
+  width: 100%;
+}
+</style>

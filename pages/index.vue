@@ -12,14 +12,14 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row mt-10 space-x-4" v-if="remainingArticles">
+      <div class="flex flex-col space-y-8 items-center md:flex-row mt-10 space-x-4 md:space-y-0 md:items-start" v-if="remainingArticles">
         <div class="w-full md:w-1/3" v-for="remainingArticle in remainingArticles.slice(0, 3)" :key="remainingArticle.id">
           <RemainingArticles :remainingArticle="remainingArticle" />
         </div>
       </div>
     </div>
   </div>
-  <footer class="mt-8 py-6 flex-col items-center justify-center text-center">
+  <footer class="md:mt-6 py-6 flex-col items-center justify-center text-center">
     <p class="text-2xl lg:text-3xl font-PPRader text-primary">Amitiés Taléa</p>
     <div class="flex items-center justify-center gap-4">
       <div class="w-8">

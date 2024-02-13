@@ -1,8 +1,8 @@
 <template>
-  <header class="px-12 md:px-14 py-3 bg-white bg-opacity-90 sticky top-0 z-50">
+  <header class="px-12 md:px-14 py-6 bg-white bg-opacity-90 sticky top-0 z-50">
     <div class="flex justify-between items-center">
       <div class="flex">
-        <p class="blog text font-extrabold font-nunito text-primary flex items-center justify-center">BLOG</p>
+        <p class="blog text-xs font-extrabold font-nunito text-primary flex items-center justify-center">BLOG</p>
         <p class="text-3xl lg:text-5xl font-PPRader text-primary">Amitiés Taléa</p>
       </div>
 
