@@ -28,7 +28,7 @@
 <script setup>
 import formatDate from "../utils/dateUtils";
 const props = defineProps(["article"]);
-const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.article.image.url);
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.article.image.formats.medium.url);
 </script>
 
 <style scoped>

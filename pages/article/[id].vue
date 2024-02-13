@@ -20,14 +20,19 @@
       </div>
     </div>
 
-     <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
-      <img :src="getImageUrl(article.image.url)" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
+    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
+      <img :src="getImageUrl(article.image.formats.large.url)" :alt="article.image.alternativeText" class="max-h-96 w-full object-cover" />
     </div>
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
       <div v-else-if="block.type === 'image'">
-        <img v-if="block.image.formats.medium" :src="getImageUrl(block.image.formats.medium.url)" :alt="block.image.alternativeText" class="py-8 px-20 w-full object-cover" />
+        <img
+          v-if="block.image.formats.medium"
+          :src="getImageUrl(block.image.formats.medium.url)"
+          :alt="block.image.alternativeText"
+          class="py-8 px-20 w-full object-cover"
+        />
       </div>
       <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
@@ -49,18 +54,23 @@ const getImageUrl = (path) => {
 
 const { id } = useRoute().params;
 
-const article = ref([]);
+// const article = ref([]);
 
-async function fetchSingleArticle() {
-  try {
-    const response = await $fetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`);
-    article.value = response.data;
-  } catch (error) {
-    console.error("Une erreur est survenue : ", error);
-  }
-}
+// async function fetchSingleArticle() {
+//   try {
+//     const response = await $fetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`);
+//     article.value = response.data;
+//   } catch (error) {
+//     console.error("Une erreur est survenue : ", error);
+//   }
+// }
 
-fetchSingleArticle();
+// fetchSingleArticle();
+
+const { data: fetchedArticle } = await useFetch(import.meta.env.VITE_API_URL + `/api/articles/${id}?&populate=image`, {
+  transform: (_fetchedArticle) => _fetchedArticle.data,
+});
+const article = fetchedArticle;
 
 const link = ref("");
 

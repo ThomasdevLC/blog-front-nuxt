@@ -18,7 +18,7 @@
 
 <script setup>
 const props = defineProps(["eventArticle"]);
-const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.eventArticle.image.url);
+const imageUrl = computed(() => import.meta.env.VITE_API_URL + props.eventArticle.image.formats.medium.url);
 </script>
 
 <style lang="scss" scoped></style>

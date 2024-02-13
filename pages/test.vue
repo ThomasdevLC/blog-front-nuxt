@@ -1,33 +1,20 @@
 <template>
-  <div v-if="remainingArticle">
-    <p>{{ remainingArticle.title }}</p>
-
-    <div v-if="remainingArticle.image">
-      <pre v-if="remainingArticle.image">{{ remainingArticle.image.url }}</pre>
-      <img :src="'http://back.amities-talea.fr' + remainingArticle.image.url" alt="truc">
+  <div class="flex flex-col md:flex-row mt-10 space-x-4" v-if="remainingArticles">
+    <div class="w-full md:w-1/3" v-for="remainingArticle in remainingArticles.slice(0, 3)" :key="remainingArticle.id">
+      <RemainingArticles :remainingArticle="remainingArticle" />
     </div>
   </div>
-
+  <pre>{{ remainingArticles }}</pre>
 </template>
 
 <script setup>
-const imageUrl = computed(() => import.meta.env.VITE_API_URL);
-
-const remainingArticle = ref([])
-
-async function fetchRemaining() {
-  try {
-    const response = await $fetch(import.meta.env.VITE_API_URL + "/api/articles/1/?&populate=image");
-    remainingArticle.value = response.data; // Mettre à jour les données des articles
-  } catch (error) {
-    console.error("Une erreur est survenue : ", error);
+const { data: fetchedArticles } = await useFetch(
+  import.meta.env.VITE_API_URL + `/api/articles?filters[main][$eq]=false&filters[tag][$ne]=Evénements&sort[0]=date:desc&populate=image`,
+  {
+    transform: (_fetchedArticles) => _fetchedArticles.data,
   }
-}
-
-fetchRemaining();
+);
+const remainingArticles = fetchedArticles;
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
