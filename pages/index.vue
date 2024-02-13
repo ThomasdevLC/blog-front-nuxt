@@ -19,6 +19,18 @@
       </div>
     </div>
   </div>
+  <footer class="mt-6 py-8 flex-col bg-primary bg-opacity-10 items-center justify-center text-center">
+    <p class="text-2xl lg:text-3xl font-PPRader text-primary">Amitiés Taléa</p>
+    <div class="flex items-center justify-center gap-4">
+      <div class="w-8">
+        <img src="../assets/images/facebook.png" alt="logo facebook" />
+      </div>
+      <div class="w-8">
+        <img src="../assets/images/mail.png" alt="logo facebook" />
+      </div>
+    </div>
+    <p class="text-primary font-nunito mt-2">02 97 75 31 73</p>
+  </footer>
 </template>
 
 <script setup>
