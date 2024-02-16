@@ -9,7 +9,7 @@
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-7 lg:gap-4 text-2xl font-nunito font-semibold text-gray-900">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 text-xl font-nunito font-semibold text-gray-900">
         <NuxtLink to="/">Accueil</NuxtLink>
         <span>|</span>
         <NuxtLink to="/infos">Infos</NuxtLink>
