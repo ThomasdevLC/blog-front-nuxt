@@ -6,7 +6,7 @@
         <p class="text-3xl lg:text-5xl font-PPRader text-primary">Amitiés Taléa</p>
       </div>
 
-      <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#9776;</button>
+      <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
 
       <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 text-xl font-nunito font-semibold text-gray-900">
