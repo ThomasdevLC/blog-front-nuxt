@@ -23,7 +23,9 @@
     <p class="text-2xl lg:text-3xl font-PPRader text-primary">Amitiés Taléa</p>
     <div class="flex items-center justify-center gap-4">
       <div class="w-8">
-        <img src="../assets/images/facebook.png" alt="logo facebook" />
+        <NuxtLink :to="'https://www.facebook.com/100069517452336/posts/530534393967559/'">
+          <img src="../assets/images/facebook.png" alt="logo facebook" />
+        </NuxtLink>
       </div>
       <div class="w-8">
         <img src="../assets/images/mail.png" alt="logo facebook" />

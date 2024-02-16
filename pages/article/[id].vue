@@ -10,7 +10,7 @@
 
   <div v-if="article" class="md:px-14 py-8 md:py-12">
     <div class="px-10 md:px-14 lg:px-72 xl:px-96">
-      <h2 class="font-title text-4xl md:text-6xl mt-4 font-cormorant">{{ article.title }}</h2>
+      <h2 class="font-title text-4xl md:text-6xl font-cormorant">{{ article.title }}</h2>
 
       <div class="my-6 flex flex-col md:flex-row gap-4">
         <p>
@@ -76,7 +76,7 @@ definePageMeta({
 
 <style>
 .article-image {
-  height: 500px;
+  max-height: 800px;
   width: 100%;
 }
 </style>
