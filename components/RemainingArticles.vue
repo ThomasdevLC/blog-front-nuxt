@@ -26,5 +26,5 @@ import formatDate from "../utils/dateUtils";
 import getImageUrl from "../utils/imageFormat";
 
 const props = defineProps(["remainingArticle"]);
-const imageUrl = computed(() => getImageUrl(props.remainingArticle));
+const imageUrl = computed(() => getImageUrl(props.remainingArticle, "medium"));
 </script>

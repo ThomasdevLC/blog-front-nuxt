@@ -30,7 +30,7 @@ import formatDate from "../utils/dateUtils";
 import getImageUrl from "../utils/imageFormat";
 
 const props = defineProps(["article"]);
-const imageUrl = computed(() => getImageUrl(props.article));
+const imageUrl = computed(() => getImageUrl(props.article, "medium"));
 </script>
 
 <style scoped>

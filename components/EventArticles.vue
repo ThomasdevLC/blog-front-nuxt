@@ -19,7 +19,7 @@
 <script setup>
 const props = defineProps(["eventArticle"]);
 import getImageUrl from "../utils/imageFormat";
-const imageUrl = computed(() => getImageUrl(props.eventArticle));
+const imageUrl = computed(() => getImageUrl(props.eventArticle, "medium"));
 </script>
 
 <style lang="scss" scoped></style>

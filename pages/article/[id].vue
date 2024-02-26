@@ -21,18 +21,13 @@
     </div>
 
     <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
-      <img :src="getImageUrl(article.image.formats.large.url)" :alt="article.image.alternativeText" class="article-image object-cover" />
+      <img :src="imageUrl" :alt="article.image.alternativeText" class="article-image object-cover" />
     </div>
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
       <p v-if="block.type === 'heading'" class="font-cormorant text-3xl mb-4">{{ block.children[0].text }}</p>
       <div v-else-if="block.type === 'image'">
-        <img
-          v-if="block.image.formats.medium"
-          :src="getImageUrl(block.image.formats.medium.url)"
-          :alt="block.image.alternativeText"
-          class="py-8 px-20 w-full object-cover"
-        />
+        <img v-if="block.image" :src="getArticleImageUrl(block, 'medium')" :alt="block.image.alternativeText" class="py-8 px-20 w-full object-cover" />
       </div>
       <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl mt-8 mb-4">{{ child.text }}</p>
@@ -46,11 +41,10 @@
 <script setup>
 import { ref } from "vue";
 import formatDate from "../../utils/dateUtils";
-const apiUrl = import.meta.env.VITE_API_URL;
+import getImageUrl from "../../utils/imageFormat";
+import getArticleImageUrl from "../../utils/imageFormat";
 
-const getImageUrl = (path) => {
-  return `${apiUrl}${path}`;
-};
+const imageUrl = computed(() => getImageUrl(article.value, "large"));
 
 const { id } = useRoute().params;
 
@@ -58,6 +52,8 @@ const { data: fetchedArticle } = await useFetch(import.meta.env.VITE_API_URL + `
   transform: (_fetchedArticle) => _fetchedArticle.data,
 });
 const article = fetchedArticle;
+
+console.log(article.value);
 
 const link = ref("");
 

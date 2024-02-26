@@ -32,7 +32,10 @@ import formatDate from "../utils/dateUtils";
 import getImageUrl from "../utils/imageFormat";
 const props = defineProps(["mainArticle"]);
 
-const imageUrl = computed(() => getImageUrl(props.mainArticle));
+const imageUrl = computed(() => getImageUrl(props.mainArticle, "medium"));
+
+console.log(props.mainArticle);
+console.log(imageUrl.value);
 </script>
 
 <style lang="scss" scoped></style>
