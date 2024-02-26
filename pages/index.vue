@@ -1,12 +1,12 @@
 <template>
   <div class="font-nunito">
-    <div class="px-10 md:px-12 lg:px-40 xl:px-96 py-">
+    <div class="px-10 md:px-12 lg:px-40 xl:px-96">
       <div class="flex justify-between gap-6 flex-col md:flex-row">
-        <div class="flex flex-col w-full md:w-3/5" v-if="mainArticle">
+        <div class="flex flex-col w-full md:w-3/5">
           <MainArticle :mainArticle="mainArticle" />
         </div>
 
-        <div class="flex flex-col gap-4" v-if="eventsArticles">
+        <div class="flex flex-col gap-4 w-full md:w-2/5" v-if="eventsArticles">
           <div v-for="eventArticle in eventsArticles.slice(0, 2)" :key="eventArticle.id">
             <EventArticles :eventArticle="eventArticle" />
           </div>
