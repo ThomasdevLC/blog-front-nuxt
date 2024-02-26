@@ -9,7 +9,8 @@
 
         <div class="flex flex-col gap-4 w-full md:w-2/5" v-if="eventsArticles">
           <div v-for="eventArticle in eventsArticles.slice(0, 2)" :key="eventArticle.id">
-            <EventArticles :eventArticle="eventArticle" />
+            <div v-if="pending"><EventSkeleton /></div>
+            <div v-else><EventArticles :eventArticle="eventArticle" /></div>
           </div>
         </div>
       </div>
