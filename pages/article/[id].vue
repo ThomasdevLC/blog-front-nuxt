@@ -53,8 +53,6 @@ const { data: fetchedArticle } = await useFetch(import.meta.env.VITE_API_URL + `
 });
 const article = fetchedArticle;
 
-console.log(article.value);
-
 const link = ref("");
 
 if (article._rawValue.tag === "Evénements") {

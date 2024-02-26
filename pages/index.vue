@@ -3,7 +3,8 @@
     <div class="px-10 md:px-12 lg:px-40 xl:px-96">
       <div class="flex justify-between gap-6 flex-col md:flex-row">
         <div class="flex flex-col w-full md:w-3/5">
-          <MainArticle :mainArticle="mainArticle" />
+          <div v-if="pending"><MainSkeleton /></div>
+          <div v-else><MainArticle :mainArticle="mainArticle" /></div>
         </div>
 
         <div class="flex flex-col gap-4 w-full md:w-2/5" v-if="eventsArticles">
@@ -36,8 +37,9 @@
 </template>
 
 <script setup>
-const { data: fetchMain } = await useFetch(import.meta.env.VITE_API_URL + `/api/articles?filters[main][$eq]=true&populate=image`, {
+const { data: fetchMain, pending } = await useLazyFetch(import.meta.env.VITE_API_URL + `/api/articles?filters[main][$eq]=true&populate=image`, {
   transform: (_fetchMain) => _fetchMain.data[0],
+  server: false,
 });
 const mainArticle = fetchMain;
 
