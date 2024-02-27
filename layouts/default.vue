@@ -3,13 +3,13 @@
     <div class="flex justify-between items-center">
       <div class="flex">
         <p class="blog text-xs font-extrabold font-nunito text-primary flex items-center justify-center">BLOG</p>
-        <p class="text-3xl lg:text-5xl font-PPRader text-primary">Amitiés Taléa</p>
+        <p class="text-3xl lg:text-5xl font-PPRader w-[200px] lg:w-[280px] text-primary">Amitiés Taléa</p>
       </div>
 
-      <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden">&#9776;</button>
-      <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl">&#10005;</div>
+      <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#9776;</button>
+      <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 text-xl font-nunito font-semibold text-gray-900">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900">
         <NuxtLink to="/">Accueil</NuxtLink>
         <span>|</span>
         <NuxtLink to="/infos">Infos</NuxtLink>
