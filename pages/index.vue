@@ -38,9 +38,8 @@
 </template>
 
 <script setup>
-const { data: fetchMain, pending } = await useLazyFetch(import.meta.env.VITE_API_URL + `/api/articles?filters[main][$eq]=true&populate=image`, {
+const { data: fetchMain } = await useFetch(import.meta.env.VITE_API_URL + `/api/articles?filters[main][$eq]=true&populate=image`, {
   transform: (_fetchMain) => _fetchMain.data[0],
-  server: false,
 });
 const mainArticle = fetchMain;
 
