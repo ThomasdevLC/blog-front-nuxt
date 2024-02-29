@@ -29,7 +29,7 @@
       <div v-else-if="block.type === 'image'">
         <img v-if="block.image" :src="getArticleImageUrl(block, 'medium')" :alt="block.image.alternativeText" class="py-8 md:px-20 w-full object-cover" />
       </div>
-      <div v-else v-for="child in block.children" :key="child.text">
+      <div v-else v-for="child in block.children" :key="child.text" class="font-nunito">
         <p v-if="child.bold" class="font-bold text-[16px] md:text-[16px] lg:text-[20px] mt-8 mb-4">{{ child.text }}</p>
         <span v-else-if="child.italic" class="italic text-gray-900 text-[18px] md:text-[20px] lg:text-[22px]">{{ child.text }}</span>
         <p v-else class="text-gray-900 text-[16px] md:text-[18px] lg:text-[20px]">{{ child.text }}</p>
