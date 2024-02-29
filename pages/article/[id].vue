@@ -10,7 +10,7 @@
 
   <div v-if="article" class="md:px-14 py-8 md:py-12">
     <div class="px-10 md:px-14 lg:px-72 xl:px-96">
-      <h2 class="font-title text-3xl md:text-5xl font-cormorant">{{ article.title }}</h2>
+      <h2 class="font-title text-3xl md:text-5xl lg:text-6xl font-cormorant">{{ article.title }}</h2>
 
       <div class="my-6 flex flex-col md:flex-row gap-4">
         <p>
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12 h-[200px] md:h-[300px] lg:min-h-[500px]">
+    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12 h-[200px] md:h-[300px] lg:min-h-[600px]">
       <img :src="imageUrl" :alt="article.image.alternativeText" class="w-full h-full object-cover" />
     </div>
 
