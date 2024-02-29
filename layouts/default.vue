@@ -9,7 +9,7 @@
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900 backdrop-blur-lg">
         <NuxtLink to="/">Accueil</NuxtLink>
         <span>|</span>
         <NuxtLink to="/infos">Infos</NuxtLink>
@@ -19,7 +19,10 @@
         <NuxtLink to="/news">Actualités</NuxtLink>
       </div>
 
-      <div v-if="showMenu" class="md:hidden flex flex-col bg-white bg-opacity-90 absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20">
+      <div
+        v-if="showMenu"
+        class="md:hidden flex flex-col bg-white bg-opacity-90 absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20 backdrop-blur-lg"
+      >
         <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>
         <NuxtLink to="/events">Événements</NuxtLink>
