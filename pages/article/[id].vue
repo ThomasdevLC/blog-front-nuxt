@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12 h-[200px] md:h-[300px] lg:h-[400px]">
+    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12 h-[200px] md:h-[300px] lg:min-h-[500px]">
       <img :src="imageUrl" :alt="article.image.alternativeText" class="w-full h-full object-cover" />
     </div>
 
@@ -30,8 +30,8 @@
         <img v-if="block.image" :src="getArticleImageUrl(block, 'medium')" :alt="block.image.alternativeText" class="py-8 md:px-20 w-full object-cover" />
       </div>
       <div v-else v-for="child in block.children" :key="child.text">
-        <p v-if="child.bold" class="font-bold text-xl md:text-[16px] mt-8 mb-4">{{ child.text }}</p>
-        <span v-else-if="child.italic" class="italic text-gray-900 text-[20px] md:text-[16px]">{{ child.text }}</span>
+        <p v-if="child.bold" class="font-bold text-[16px] md:text-[16px] lg:text-[20px] mt-8 mb-4">{{ child.text }}</p>
+        <span v-else-if="child.italic" class="italic text-gray-900 text-[18px] md:text-[20px] lg:text-[22px]">{{ child.text }}</span>
         <p v-else class="text-gray-900 text-[16px] md:text-[18px] lg:text-[20px]">{{ child.text }}</p>
       </div>
     </div>
