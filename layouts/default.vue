@@ -1,5 +1,5 @@
 <template>
-  <header class="px-12 md:px-14 py-6 bg-white bg-opacity-90 sticky top-0 z-50">
+  <header class="px-12 md:px-14 py-6 bg-white bg-opacity-80 backdrop-blur-lg sticky top-0 z-50">
     <div class="flex justify-between items-center">
       <div class="flex">
         <p class="blog text-xs font-extrabold font-nunito text-primary flex items-center justify-center">BLOG</p>
@@ -9,7 +9,7 @@
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900 backdrop-blur-lg">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900">
         <NuxtLink to="/">Accueil</NuxtLink>
         <span>|</span>
         <NuxtLink to="/infos">Infos</NuxtLink>
@@ -21,7 +21,7 @@
 
       <div
         v-if="showMenu"
-        class="md:hidden flex flex-col bg-white bg-opacity-90 absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20 backdrop-blur-lg"
+        class="md:hidden flex flex-col absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20 backdrop-blur-xl bg-white bg-opacity-90"
       >
         <NuxtLink to="/">Accueil</NuxtLink>
         <NuxtLink to="/infos">Infos</NuxtLink>

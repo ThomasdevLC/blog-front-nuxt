@@ -10,7 +10,7 @@
 
   <div v-if="article" class="md:px-14 py-8 md:py-12">
     <div class="px-10 md:px-14 lg:px-72 xl:px-96">
-      <h2 class="font-title text-4xl md:text-5xl font-cormorant">{{ article.title }}</h2>
+      <h2 class="font-title text-3xl md:text-5xl font-cormorant">{{ article.title }}</h2>
 
       <div class="my-6 flex flex-col md:flex-row gap-4">
         <p>
@@ -20,8 +20,8 @@
       </div>
     </div>
 
-    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12">
-      <img :src="imageUrl" :alt="article.image.alternativeText" class="article-image object-cover" />
+    <div v-if="article.image" class="px-10 lg:px-48 xl:px-64 mt-8 mb-12 h-[200px] md:h-[300px] lg:h-[400px]">
+      <img :src="imageUrl" :alt="article.image.alternativeText" class="w-full h-full object-cover" />
     </div>
 
     <div class="px-10 lg:px-72 xl:px-96" v-for="block in article.blockText" :key="block.type">
@@ -32,7 +32,7 @@
       <div v-else v-for="child in block.children" :key="child.text">
         <p v-if="child.bold" class="font-bold text-xl md:text-[16px] mt-8 mb-4">{{ child.text }}</p>
         <span v-else-if="child.italic" class="italic text-gray-900 text-[20px] md:text-[16px]">{{ child.text }}</span>
-        <p v-else class="text-gray-900 md:text-[16px] lg:text-[20px]">{{ child.text }}</p>
+        <p v-else class="text-gray-900 text-[16px] md:text-[18px] lg:text-[20px]">{{ child.text }}</p>
       </div>
     </div>
   </div>
