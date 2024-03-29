@@ -9,14 +9,18 @@
       <button v-if="!showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#9776;</button>
       <div v-if="showMenu" @click="toggleMenu" class="block md:hidden text-2xl text-primary">&#10005;</div>
 
-      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-2xl font-nunito font-semibold text-gray-900">
+      <div v-if="!showMenu" class="hidden md:flex md:gap-4 lg:gap-4 lg:text-xl font-nunito font-semibold text-gray-900">
         <NuxtLink to="/">Accueil</NuxtLink>
         <span>|</span>
-        <NuxtLink to="/infos">Infos</NuxtLink>
+        <NuxtLink to="/history">Qui sommes nous</NuxtLink>
         <span>|</span>
-        <NuxtLink to="/events">Événements</NuxtLink>
+        <NuxtLink to="/infos">Infos Asso</NuxtLink>
+        <span>|</span>
+        <NuxtLink to="/events">Événements Asso</NuxtLink>
         <span>|</span>
         <NuxtLink to="/news">Actualités</NuxtLink>
+        <span>|</span>
+        <NuxtLink to="/solidarity">Solidarité & Cooperation</NuxtLink>
       </div>
 
       <div
@@ -24,8 +28,8 @@
         class="md:hidden flex flex-col absolute text-2xl px-10 py-5 space-y-3 border border-gray-800 top-20 backdrop-blur-xl bg-white bg-opacity-90"
       >
         <NuxtLink to="/">Accueil</NuxtLink>
-        <NuxtLink to="/infos">Infos</NuxtLink>
-        <NuxtLink to="/events">Événements</NuxtLink>
+        <NuxtLink to="/infos">Infos Asso</NuxtLink>
+        <NuxtLink to="/events">Événements Asso</NuxtLink>
         <NuxtLink to="/news">Actualités</NuxtLink>
       </div>
     </div>
