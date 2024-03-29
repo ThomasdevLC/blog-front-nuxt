@@ -31,6 +31,7 @@
         <NuxtLink to="/infos">Infos Asso</NuxtLink>
         <NuxtLink to="/events">Événements Asso</NuxtLink>
         <NuxtLink to="/news">Actualités</NuxtLink>
+        <NuxtLink to="/solidarity">Actualités</NuxtLink>
       </div>
     </div>
   </header>
